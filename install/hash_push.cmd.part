@@ -1,0 +1,2 @@
+@cd ..\temp\
+@copy hashstack.txt/B+hashpart.txt/B

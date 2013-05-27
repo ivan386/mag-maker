@@ -1,0 +1,3 @@
+@lua5.1 -e "htmltbl=1" main.lua
+@echo "Done. Result in 'links.htm'"
+@..\result\links.htm

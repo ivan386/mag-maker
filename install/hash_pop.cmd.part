@@ -1,0 +1,2 @@
+@move ..\temp\hashstack.txt ..\temp\hashpart.txt
+@echo --[[Start]]-- > ..\temp\hashstack.txt

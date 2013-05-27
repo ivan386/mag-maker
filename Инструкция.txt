@@ -1,0 +1,218 @@
+	Сайт: http://forum.proc.ru/index.php?showtopic=41607
+		  http://www.liveinternet.ru/users/ivan386/post81768504/
+
+>>>Установка:<<<
+
+1 Распаковать архив на диск C:\
+На диске C:\ должна появиться папка MagMaker
+2 Зайти в папку MagMaker и запустить двойным щелчком файл install.cmd
+При успешной установке в контекстном меню* в пункте отправить (SendTo) должны появиться новые пункты.
+	MagMaker\html.cmd
+	MagMaker\ed2k_link.cmd
+	MagMaker\magnet.cmd
+	MagMaker\mag_BB.cmd
+	MagMaker\mag_HTML.cmd
+	MagMaker\filelist.cmd
+	MagMaker\hashonly.cmd
+	MagMaker\htext.cmd
+	MagMaker\hash_push.cmd
+	
+*При клике в эксплорере (мой компьтер) правой кнопкой мыши на любом файле или папке.
+
+>>>Настройка:<<<
+
+	Пуск (Start) > Все программы (All Programs) > 
+	MagMaker > rhash_max.cmd - Maxi режим для RHash (Вычисляет: CRC32, MD5, TTH, SHA1, ED2K, AICH, TIGER)
+	MagMaker > rhash_min.cmd - Mini режим для RHash (Вычисляет: SHA1, TTH, ED2K)
+	MagMaker > rhash_shareaza.cmd - Shareaza режим для RHash (Вычисляет: SHA1, TTH, ED2K, MD5)
+	MagMaker > hash_pop.cmd - Востанавливает temp\hashpart.txt из temp\hashstack.txt и обнуляет temp\hashstack.txt
+	
+>>>Использование:<<<
+
+1 Выбрать в эксплорере 1 или несколько (до 9) файлов и папок.
+2 Нажать правую кнопку мыши.
+3 Выбрать пункт Отправить (SendTo).
+4 Далее нажать на один из пунктов в зависимости от задачи.
+	MagMaker\html.cmd - Создает веб страницу для использования вместе с клиентом Shareaza
+	MagMaker\ed2k_link.cmd - Делает ed2k список ссылок. (Скрипт не используется)
+	MagMaker\magnet.cmd - Делает обычный список магнет ссылок.
+	MagMaker\mag_BB.cmd - Делает список ссылок в BB коде для форумов.
+	MagMaker\mag_HTML.cmd - Делает список ссылок в HTML коде для вставки на свою домашнюю страницу.
+	MagMaker\filelist.cmd - Делает файл лист для DC++ клиентов.
+	MagMaker\hashonly.cmd - Только создает таблитцу хешей (temp\hashpart.txt)
+	MagMaker\htext.cmd - Переводит хеши в удобочитаемый вид (текст).
+	MagMaker\hash_push.cmd - Создает таблицу хешей и добавляет к файлу temp\hashstack.txt
+	
+После расчета хеша скрипт обработает таблитцу и после этого откроется файл с результатами в зависимости от выбранного пункта.
+
+Пример результата работы пунктов:
+--------------------------------------------------------------
+mag_BB.cmd
+[url="magnet:?xt=urn:ed2k:3EBC1CE434C5BD67C9F74D29D598BA86&xl=39985&dn=rhash-1.0.4.zip&xt=urn:bitprint:D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW.WCFVITA6HNX2IFCOUYMRV7SMZ5R2WDJSGOJQQ4I&xt=urn:aich:d72hz7spi3hqlhpq4h4pjg4apdoprhjw&xs=http%3A//cache.freebase.be/D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW&xs=dchub://smarthub.spb.ru"]rhash-1.0.4.zip[/url]
+
+mag_HTML.cmd
+<a href="magnet:?xt=urn:ed2k:3EBC1CE434C5BD67C9F74D29D598BA86&xl=39985&dn=rhash-1.0.4.zip&xt=urn:bitprint:D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW.WCFVITA6HNX2IFCOUYMRV7SMZ5R2WDJSGOJQQ4I&xt=urn:aich:d72hz7spi3hqlhpq4h4pjg4apdoprhjw&xs=http%3A//cache.freebase.be/D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW&xs=dchub://smarthub.spb.ru">rhash-1.0.4.zip</a><br />
+
+magnet.cmd
+#1 rhash-1.0.4.zip
+magnet:?xt=urn:ed2k:3EBC1CE434C5BD67C9F74D29D598BA86&xl=39985&dn=rhash-1.0.4.zip&xt=urn:bitprint:D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW.WCFVITA6HNX2IFCOUYMRV7SMZ5R2WDJSGOJQQ4I&xt=urn:aich:d72hz7spi3hqlhpq4h4pjg4apdoprhjw&xs=http%3A//cache.freebase.be/D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW&xs=dchub://smarthub.spb.ru
+
+htext.cmd
+File name: rhash-1.0.4.zip
+Size: 39985
+ED2K: 3EBC1CE434C5BD67C9F74D29D598BA86
+SHA1: D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW
+TTH: WCFVITA6HNX2IFCOUYMRV7SMZ5R2WDJSGOJQQ4I
+p2p: http://cache.freebase.be/D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW
+p2p: dchub://smarthub.spb.ru
+--------------------------------------------------------------
+
+>>>Использование таблиц шешей<<<
+
+Пуск (Start) -> Все программы (All Programms) -> MagMaker ->
+	magnet.cmd - Делает обычный список магнет ссылок.
+	mag_BB.cmd - Делает список ссылок в BB коде для форумов.
+	mag_HTML.cmd - Делает список ссылок в HTML коде для вставки на свою домашнюю страницу.
+	filelist.cmd - Делает файл лист для DC++ клиентов.
+
+>>>Ручное или полуавтоматическое создание таблиц хешей:<<<
+
+Таблитца хешей это файл "temp\hashpart.txt". В него записываются результаты обработки файлов (хеши) и дополнительная информация для последующей обработки скриптом. 
+--[[
+--Пример заполнения блока.
+{
+path=[=[P2P Clients\Shareaza_2.3.1.0_Win32.exe]=],									--Полный путь до файла.
+name=[=[Shareaza_2.3.1.0_Win32.exe]=],												--Имя файла.
+size="5265101",																		--Размер файла в байтах.
+crc32="F7028B34",																	--CRC32 файла в HEX
+md5="4C42CDDBF2DF538C5DFE1519D7F3A001",												--MD5 хеш файла кодированый в HEX.
+sha1="2QK6Y2Y3WEK7YRHOFV2OL36CX25FAN6Y",											--SHA1 хеш файла кодированный в Base32.
+ed2k="D94C538A24123DBC074834E6A7B45743",											--ED2K хеш файла кодированный в HEX.
+aich="7L6M5AKOVOCF7RMDZXBCJLFF3TPRDBCM", 											--AICH хеш файла кодированный в Base32.
+tiger="14EE5431E8593B7DE25F19DE897B2F2C212F194E0DB1DDB7", 							--Tiger (не путать с TTH) хеш файла кодированный в HEX.
+tth="Q3HTTD3IKKPONYGJUFUPWISUO5ONQRVWTUPTLJI",										--TTH (Tiger Tree Hash) хеш файла кодированный в Base32.
+kzhash="207c845b44db9df63c7b51f2febc318e34abbad66672bfd2bfee7d690e7bdc86f73baea3",	--KaZaA хеш файла кодированый в HEX.
+btih="KRFNX4NRASD3442DRNU2RFXGCUHTSAGK",											--BitTorrent Info Hash хеш кодированный в Base32.
+url={
+		[=[http://heanet.dl.sourceforge.net/sourceforge/shareaza/Shareaza_2.3.1.0_Win32.exe]=],	--http сылка на файл.
+		[=[ftp://ftp.example.com/Shareaza_2.3.1.0_Win32.exe]=],	--ftp сылка на файл.
+	},
+p2purl={
+		[=[http://127.0.0.1:6346/uri-res/N2R?urn:sha1:2QK6Y2Y3WEK7YRHOFV2OL36CX25FAN6Y]=],	--Content-Addressable Web URL ссылка на файл.
+		-- [=[http://cache.freebase.be/2QK6Y2Y3WEK7YRHOFV2OL36CX25FAN6Y]=],					--Кеш источников для файла (Добавляется автоматически в файле bin\head.lua поэтому закомментирован)
+		-- [=[dchub://smarthub.spb.ru]=],													--Ссылка на Direct Connect Хаб на котором можно найти файл (Добавляется автоматически в файле bin\head.lua поэтому закомментирован)
+	},
+tags={
+		{name=[=[Описание]=], text=[=[P2P Клиент для Gnutella, Gnutella2, EDonkey2000, BitTorrent, HTTP и FTP]=]},
+		{name=[=[Длинное описание]=], text=[=[Shareaza — свободный файлообменный клиент для всех версий Microsoft Windows с поддержкой протоколов Gnutella, Gnutella2, eDonkey2000 (сеть), BitTorrent, FTP и HTTP. Умеет работать с magnet-ссылками, ed2k-ссылками и piolet-ссылками, а также с Gnutella-ссылками. Переведён на 27 языков.
+К уникальным особенностям Shareazы можно отнести совместную одновременную закачку из всех поддерживаемых сетей; ведение подробных метаданных (комментарии, рейтинги и свойства файлов) и предпросмотра, которые видны совместимым клиентам; поддержку коллекций и скинов.]=]},
+	}
+},
+
+
+Далее идет не заполненный блок таблици. Его можно копировать полностью, раскомментировать (удалить "--" (два тире) тире перед параметром) и заполнить нужные поля.
+]]
+
+--------------------------------------------------------------
+{
+--path=[=[]=],
+--name=[=[]=],
+--size="",
+--crc32="",
+--md5="",
+--sha1="",
+--ed2k="",
+--aich=""
+--tiger="", 
+--tth="", 
+--kzhash="", 
+--btih="",
+--aich="",
+--url={
+--		[=[]=],
+--	},
+--p2purl={
+--		[=[]=],
+--	},
+--tags={
+--		{name=[=[]=], text=[=[]=]},
+--	}
+},
+--------------------------------------------------------------
+
+>>>Для самостоятельной сборки всего пакета (MagMaker):<<<
+
+- Загрузка компонентов:
+1 RHash 1.0.4
+	Сайт программы: http://rhash.sf.net (http://rhash.anz.ru)
+	Магнет (Версия для Windows zip): magnet:?xt=urn:ed2k:3EBC1CE434C5BD67C9F74D29D598BA86&xl=39985&dn=rhash-1.0.4.zip&xt=urn:bitprint:D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW.WCFVITA6HNX2IFCOUYMRV7SMZ5R2WDJSGOJQQ4I&xt=urn:aich:d72hz7spi3hqlhpq4h4pjg4apdoprhjw&xs=http%3A//cache.freebase.be/D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW&xs=dchub://smarthub.spb.ru
+
+2 lua5_1_2_Win32_bin.zip
+	Сайт: http://luaforge.net/frs/?group_id=110
+	Магнет (Windows x86 Executables): magnet:?xt=urn:ed2k:5A8577D0AE1C9E635D18FF637D9376D0&xl=142512&dn=lua5_1_2_Win32_bin.zip&xt=urn:bitprint:U73JL7QPOVZ46Z4PPS2EBVNWYBDGPSZ5.E2KQD3D5GKMXYXE757RCBAHE37HQK53FNYFYHZA&xt=urn:aich:u73jl7qpovz46z4pps2ebvnwybdgpsz5&xs=http%3A//cache.freebase.be/U73JL7QPOVZ46Z4PPS2EBVNWYBDGPSZ5&xs=dchub://smarthub.spb.ru
+
+3 7za457.zip
+	Сайт: http://www.7-zip.org/download.html
+	Магнет (7-Zip Command Line Version): magnet:?xt=urn:ed2k:5AE455E1BBE8EACEBB7FA0ADAA53B433&xl=349171&dn=7za457.zip&xt=urn:bitprint:K6NBLMPV563R7PWMVZ7VZBN45MQFEZTQ.BXLBIN4SAS7UJMNA43OWD4BPTIEYNLWUSQVJE7Q&xt=urn:aich:omcgpyj3ooz5zmn2677nvzqhlmcmp3c3&xs=http%3A//cache.freebase.be/K6NBLMPV563R7PWMVZ7VZBN45MQFEZTQ&xs=dchub://smarthub.spb.ru
+
+4 MagMaker
+	Сайт: http://forum.proc.ru/index.php?showtopic=41607
+		  http://www.liveinternet.ru/users/ivan386/post81768504/
+
+Дерево файлов версии на (15.06.2008). Указанные только необходимые для работы файлы.
+--------------------------------------------------------------
+- Расположение файлов из "MagMaker Scripts Only"
+C:\MagMaker\install.cmd
+C:\MagMaker\uninstall.cmd
+
+C:\MagMaker\bin\main.lua
+C:\MagMaker\bin\foot.lua
+C:\MagMaker\bin\head.lua
+C:\MagMaker\bin\join.cmd
+C:\MagMaker\bin\rhash.cmd
+
+
+C:\MagMaker\install\magnet.cmd.part
+C:\MagMaker\install\mag_BB.cmd.part
+C:\MagMaker\install\mag_HTML.cmd.part
+
+C:\MagMaker\install\html.cmd.part
+C:\MagMaker\install\ed2k_link.cmd.part
+C:\MagMaker\install\filelist.cmd.part
+
+C:\MagMaker\install\hash_push.cmd.part
+C:\MagMaker\install\hash_pop.cmd.part
+
+C:\MagMaker\install\rhash_max.cmd.part
+C:\MagMaker\install\rhash_min.cmd.part
+C:\MagMaker\install\rhash_shareaza.cmd.part
+
+C:\MagMaker\install\rhash.cmd.part
+C:\MagMaker\install\head.cmd.part
+C:\MagMaker\install\join.cmd.part
+
+- Расположние файлов из "RHash 1.0.4"
+C:\MagMaker\bin\rhash.exe
+
+- Расположение файлов из "lua5_1_2_Win32_bin.zip"
+C:\MagMaker\bin\lua5.1.exe
+C:\MagMaker\bin\lua5.1.dll
+
+- Расположение файлов из "7za457.zip"
+C:\MagMaker\bin\7za.exe
+--------------------------------------------------------------
+
+Список магнетов. Оставленно только не изменяемое.
+--------------------------------------------------------------
+#1 lua5.1.dll
+magnet:?xt=urn:ed2k:68794A24A72346737811548284B322D1&xl=114688&dn=lua5.1.dll&xt=urn:bitprint:AK7PEII4VXWDVP2AOXTKZKR7WN6GHULG.3JPPYGAJK2U4MSVCD672IZETIMWVPK5MJUKPVUA&xt=urn:aich:ak7peii4vxwdvp2aoxtkzkr7wn6ghulg&xs=http%3A//cache.freebase.be/AK7PEII4VXWDVP2AOXTKZKR7WN6GHULG&xs=dchub://smarthub.spb.ru
+
+#2 lua5.1.exe
+magnet:?xt=urn:ed2k:73EDDC1366FAEA414A4E48644EA4D4FB&xl=20480&dn=lua5.1.exe&xt=urn:bitprint:U3OLSUNWLJOJP3FIXNS2H3NGHCMBV5FZ.OFCYE4HH6KKEEZ5FUKTGUCAJVB3PYMABFWRUCYY&xt=urn:aich:u3olsunwljojp3fixns2h3nghcmbv5fz&xs=http%3A//cache.freebase.be/U3OLSUNWLJOJP3FIXNS2H3NGHCMBV5FZ&xs=dchub://smarthub.spb.ru
+
+#3 rhash.exe
+magnet:?xt=urn:ed2k:34F54A1B9C8591F0BA48C916DA7366AD&xl=58368&dn=rhash.exe&xt=urn:bitprint:43HR6QJQ2YYARKHIPPG23PTHVS2XLEG5.U7MDMVIEYALNA3PMLVHUTY6EE623UWGXJ3VVF2Q&xt=urn:aich:43hr6qjq2yyarkhippg23pthvs2xleg5&xs=http%3A//cache.freebase.be/43HR6QJQ2YYARKHIPPG23PTHVS2XLEG5&xs=dchub://smarthub.spb.ru
+
+#4 7za.exe
+magnet:?xt=urn:ed2k:A6FF438165E84153894EEF2AE4199537&xl=517632&dn=7za.exe&xt=urn:bitprint:3HIJZWZAUZYRZPU6FFTC5CCQFXWB2MC4.FKGJ6YFYNAB4KGGX7A4RTPXOJTGXCZGD6RD7O6A&xt=urn:aich:fzfzmfixil6jxijemdliwzzvpiyovzxx&xs=http%3A//cache.freebase.be/3HIJZWZAUZYRZPU6FFTC5CCQFXWB2MC4&xs=dchub://smarthub.spb.ru
+--------------------------------------------------------------

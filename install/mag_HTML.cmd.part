@@ -1,0 +1,3 @@
+@lua5.1 -e "htmlenc=1" main.lua
+@echo "Done. Result in 'links.txt'"
+@..\result\links.txt
