@@ -1,0 +1,2 @@
+@lua5.1 -e "marker=[[bad]]" marker.lua
+@echo "Done."

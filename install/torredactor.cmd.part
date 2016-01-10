@@ -1,1 +1,1 @@
-@lua5.1 -i torredactor.lua
+@lua5.1 -i torredactor.lua %1

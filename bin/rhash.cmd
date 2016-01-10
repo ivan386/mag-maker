@@ -1,0 +1,2 @@
+@echo "Calc hash..."
+@rhash.exe -r -o"..\temp\hashpart.txt" --percents --ansi --printf "\n{\npath=[=[%%p]=], \nname=[=[%%f]=], \nsize=%%s, \nsha1=b32enc(hexdec(\"%%H\")), \ned2k=\"%%E\", \ntth=\"%%T\", \nmd5=\"%%M\", \naich=\"%%A\" \n}," %1 %2 %3 %4 %5 %6 %7 %8 %9

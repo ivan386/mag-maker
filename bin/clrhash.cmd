@@ -1,0 +1,1 @@
+@rhash --printf="\nreturn{path=[=[%%p]=],name=[=[%%f]=],size=%%s,sha1=[=[%%H]=]}" %1

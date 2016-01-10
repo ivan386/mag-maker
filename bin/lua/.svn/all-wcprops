@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/mag_maker/!svn/ver/3/trunk/bin/lua
+END
+torred.lua
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mag_maker/!svn/ver/2/trunk/bin/lua/torred.lua
+END
+encoding.lua
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mag_maker/!svn/ver/3/trunk/bin/lua/encoding.lua
+END
+serialize.lua
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mag_maker/!svn/ver/2/trunk/bin/lua/serialize.lua
+END
+sharead.lua
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mag_maker/!svn/ver/3/trunk/bin/lua/sharead.lua
+END

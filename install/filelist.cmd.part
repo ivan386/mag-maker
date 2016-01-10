@@ -1,8 +1,7 @@
-@echo return {[=[%1]=],[=[%2]=],[=[%3]=],[=[%4]=],[=[%5]=],[=[%6]=],[=[%7]=],[=[%8]=],[=[%9]=]}> ..\temp\fla.lua
 @lua5.1 -e "xmlfl=1; args=loadfile([[..\temp\fla.lua]])()" main.lua
-@del ..\temp\fla.lua
 @call ..\temp\del.cmd
 @7za.exe a -tbzip2 "..\result\files.xml.bz2" "..\temp\files.xml"
 @rhash.exe --ansi --printf "@rename ..\\result\\files.xml.bz2 FileList.%%T.xml.bz2\n@echo Done. Result in 'FileList.%%T.xml.bz2'\n@echo @del ..\\result\\FileList.%%T.xml.bz2 > ..\\temp\\del.cmd" "..\result\files.xml.bz2" > ..\temp\rename.cmd
 @call ..\temp\rename.cmd
 @explorer "..\result"
+@pause

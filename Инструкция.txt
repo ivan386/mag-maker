@@ -1,5 +1,25 @@
 	Сайт: http://forum.proc.ru/index.php?showtopic=41607
 		  http://www.liveinternet.ru/users/ivan386/post81768504/
+		  
+	Сайт RHash: http://rhash.anz.ru/
+	
+	Про магнет ссылки: http://ru.wikipedia.org/wiki/Magnet-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0
+	Про Metalink:  http://ru.wikipedia.org/wiki/Metalink
+	
+{path=[=[[Path]]=],name=[=[[Name]]=],size=[ByteSize],sha1="[SHA1]",tth="[TIGER]",ed2k="[ED2K]",md5="[MD5]",btih="[BTH]",url={[Link]}},
+
+Magnet Maker
+
+Скрипт изначально писался для использования с программой RHash. Он переводил Sha1 хеш из HEX в Base32 и собирал из хешей универсальную магнет ссылку.
+
+Теперь скрипт немного вырос и он теперь выполняет:
+1 Создание магнет листа (Обычный, BBCode, HTML)
+2 Создание расширенного файл листа для клиентов DirrectConnect.
+3 Создание простого (легко читаемого) списка хешей.
+4 Встройка дополнительных ссылок (источников).
+5 Создание HTML страницы для клиента Shareaza.
+6 Возможность вставки описания файла в файл лист и простой список.
+7 Создание Metalink файлов.
 
 >>>Установка:<<<
 
@@ -13,18 +33,22 @@
 	MagMaker\mag_BB.cmd
 	MagMaker\mag_HTML.cmd
 	MagMaker\filelist.cmd
+	MagMaker\metalink.cmd
 	MagMaker\hashonly.cmd
 	MagMaker\htext.cmd
 	MagMaker\hash_push.cmd
+	MagMaker\Torrent Redactor\torredactor.cmd - Редактор торрентов.
+	MagMaker\Torrent Redactor\torpatch.cmd - Торрент патчер. Позволяет автоматически менять трекер записанный в торренте. Перед использованием откройте в текстовом редакторе файл bin\torpatch.lua и выпоните нструкции в комментариях.
 	
 *При клике в эксплорере (мой компьтер) правой кнопкой мыши на любом файле или папке.
 
 >>>Настройка:<<<
 
 	Пуск (Start) > Все программы (All Programs) > 
-	MagMaker > rhash_max.cmd - Maxi режим для RHash (Вычисляет: CRC32, MD5, TTH, SHA1, ED2K, AICH, TIGER)
-	MagMaker > rhash_min.cmd - Mini режим для RHash (Вычисляет: SHA1, TTH, ED2K)
-	MagMaker > rhash_shareaza.cmd - Shareaza режим для RHash (Вычисляет: SHA1, TTH, ED2K, MD5)
+	MagMaker > Settings > rhash_max.cmd - Maxi режим для RHash (Вычисляет: CRC32, MD5, TTH, SHA1, ED2K, AICH, TIGER)
+	MagMaker > Settings > rhash_min.cmd - Mini режим для RHash (Вычисляет: SHA1, TTH, ED2K)
+	MagMaker > Settings > rhash_shareaza.cmd - Shareaza режим для RHash (Вычисляет: SHA1, TTH, ED2K, MD5)
+	MagMaker > Settings > rhash_shared2k.cmd - Shareaza режим для RHash (Вычисляет: SHA1, TTH, ED2K, MD5, AICH)
 	MagMaker > hash_pop.cmd - Востанавливает temp\hashpart.txt из temp\hashstack.txt и обнуляет temp\hashstack.txt
 	
 >>>Использование:<<<
@@ -39,10 +63,11 @@
 	MagMaker\mag_BB.cmd - Делает список ссылок в BB коде для форумов.
 	MagMaker\mag_HTML.cmd - Делает список ссылок в HTML коде для вставки на свою домашнюю страницу.
 	MagMaker\filelist.cmd - Делает файл лист для DC++ клиентов.
+	MagMaker\metalink.cmd - Металинк файл. Его ипользуют GetRight 6, Free Download Manager 2.5 для получения зеркал файлов.
 	MagMaker\hashonly.cmd - Только создает таблитцу хешей (temp\hashpart.txt)
 	MagMaker\htext.cmd - Переводит хеши в удобочитаемый вид (текст).
 	MagMaker\hash_push.cmd - Создает таблицу хешей и добавляет к файлу temp\hashstack.txt
-	
+
 После расчета хеша скрипт обработает таблитцу и после этого откроется файл с результатами в зависимости от выбранного пункта.
 
 Пример результата работы пунктов:
@@ -66,6 +91,11 @@ TTH: WCFVITA6HNX2IFCOUYMRV7SMZ5R2WDJSGOJQQ4I
 p2p: http://cache.freebase.be/D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW
 p2p: dchub://smarthub.spb.ru
 --------------------------------------------------------------
+
+	Дополнительно для .torrent файлов
+	
+	MagMaker\Torrent Redactor\torredactor.cmd - Редактор торрентов.
+	MagMaker\Torrent Redactor\torpatch.cmd - Торрент патчер. Позволяет автоматически менять трекер записанный в торренте. Перед использованием откройте в текстовом редакторе файл bin\torpatch.lua и выпоните нструкции в комментариях.
 
 >>>Использование таблиц шешей<<<
 
@@ -97,14 +127,19 @@ url={
 		[=[http://heanet.dl.sourceforge.net/sourceforge/shareaza/Shareaza_2.3.1.0_Win32.exe]=],	--http сылка на файл.
 		[=[ftp://ftp.example.com/Shareaza_2.3.1.0_Win32.exe]=],	--ftp сылка на файл.
 	},
+purl={
+		[=[http://shareaza.sourceforge.net/?id=download]=], --ссылка на страницу с которой можно скачать файл.
+		[=[http://sourceforge.net/project/showfiles.php?group_id=110672&package_id=119725]=] 
+	}
 p2purl={
-		[=[http://127.0.0.1:6346/uri-res/N2R?urn:sha1:2QK6Y2Y3WEK7YRHOFV2OL36CX25FAN6Y]=],	--Content-Addressable Web URL ссылка на файл.
+		-- [=[http://127.0.0.1:6346/uri-res/N2R?urn:sha1:2QK6Y2Y3WEK7YRHOFV2OL36CX25FAN6Y]=],	--Content-Addressable Web URL ссылка на файл.
 		-- [=[http://cache.freebase.be/2QK6Y2Y3WEK7YRHOFV2OL36CX25FAN6Y]=],					--Кеш источников для файла (Добавляется автоматически в файле bin\head.lua поэтому закомментирован)
 		-- [=[dchub://smarthub.spb.ru]=],													--Ссылка на Direct Connect Хаб на котором можно найти файл (Добавляется автоматически в файле bin\head.lua поэтому закомментирован)
 	},
 tags={
-		{name=[=[Описание]=], text=[=[P2P Клиент для Gnutella, Gnutella2, EDonkey2000, BitTorrent, HTTP и FTP]=]},
-		{name=[=[Длинное описание]=], text=[=[Shareaza — свободный файлообменный клиент для всех версий Microsoft Windows с поддержкой протоколов Gnutella, Gnutella2, eDonkey2000 (сеть), BitTorrent, FTP и HTTP. Умеет работать с magnet-ссылками, ed2k-ссылками и piolet-ссылками, а также с Gnutella-ссылками. Переведён на 27 языков.
+		{key=[=[copyright]=], name=[=[Авторские права]=], text=[=[2007-2008 Shareaza Development Team]=]},
+		{key=[=[description]=],name=[=[Короткое описание]=], text=[=[P2P Клиент для Gnutella, Gnutella2, EDonkey2000, BitTorrent, HTTP и FTP]=]},
+		{key=[=[description]=], name=[=[Длинное описание]=], text=[=[Shareaza — свободный файлообменный клиент для всех версий Microsoft Windows с поддержкой протоколов Gnutella, Gnutella2, eDonkey2000 (сеть), BitTorrent, FTP и HTTP. Умеет работать с magnet-ссылками, ed2k-ссылками и piolet-ссылками, а также с Gnutella-ссылками. Переведён на 27 языков.
 К уникальным особенностям Shareazы можно отнести совместную одновременную закачку из всех поддерживаемых сетей; ведение подробных метаданных (комментарии, рейтинги и свойства файлов) и предпросмотра, которые видны совместимым клиентам; поддержку коллекций и скинов.]=]},
 	}
 },
@@ -143,7 +178,7 @@ tags={
 >>>Для самостоятельной сборки всего пакета (MagMaker):<<<
 
 - Загрузка компонентов:
-1 RHash 1.0.4
+1 RHash 1.0.4 (Версия 1.0.5 by Aleksey от 2008-09-14 имеет не исправленные баги)
 	Сайт программы: http://rhash.sf.net (http://rhash.anz.ru)
 	Магнет (Версия для Windows zip): magnet:?xt=urn:ed2k:3EBC1CE434C5BD67C9F74D29D598BA86&xl=39985&dn=rhash-1.0.4.zip&xt=urn:bitprint:D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW.WCFVITA6HNX2IFCOUYMRV7SMZ5R2WDJSGOJQQ4I&xt=urn:aich:d72hz7spi3hqlhpq4h4pjg4apdoprhjw&xs=http%3A//cache.freebase.be/D72HZ7SPI3HQLHPQ4H4PJG4APDOPRHJW&xs=dchub://smarthub.spb.ru
 
@@ -179,6 +214,7 @@ C:\MagMaker\install\mag_HTML.cmd.part
 C:\MagMaker\install\html.cmd.part
 C:\MagMaker\install\ed2k_link.cmd.part
 C:\MagMaker\install\filelist.cmd.part
+C:\MagMaker\install\metalink.cmd.part
 
 C:\MagMaker\install\hash_push.cmd.part
 C:\MagMaker\install\hash_pop.cmd.part
@@ -189,6 +225,7 @@ C:\MagMaker\install\rhash_shareaza.cmd.part
 
 C:\MagMaker\install\rhash.cmd.part
 C:\MagMaker\install\head.cmd.part
+C:\MagMaker\install\join.cmd.part
 C:\MagMaker\install\join.cmd.part
 
 - Расположние файлов из "RHash 1.0.4"

@@ -1,0 +1,1 @@
+@copy "head.lua"/B+"..\temp\hashpart.txt"/B+"foot.lua"/B "..\temp\hash.lua"

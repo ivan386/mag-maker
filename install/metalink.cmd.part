@@ -1,0 +1,2 @@
+@lua5.1 -e "xmlfl=1; args=loadfile([[..\temp\fla.lua]])()" metalink.lua
+@explorer "..\result"

@@ -1,15 +1,16 @@
 ED2K
 
 ed2kftp://[address]:[port]/[ed2k hash]/[file size]/
-ed2k://|file|[file name]|[file size]|[file hash]|/|sources,[address]:[port]|/
+ed2k://|file|[file name]|[file size]|[file ed2k hash]|h=[file aich hash]|p=[HASH1]:[HASH2]:...|s=[url]|/|sources,[address]:[port]|/
 
 Gnutella2
 
 http://[address]:[port]/uri-res/N2R?[urn]
+http://[address]:[port]/[file name]
 http://[address]:[port]/get/[file name]
 http://[address]:[port]/get/[file index]/[file name]
 
 DirectConnect
 
-dchub://[address]:[port]
+dchub://[address]:[port]/[user nick]
 
